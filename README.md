@@ -150,11 +150,8 @@ DM the BBS node and send `S` for stats. You should see `[ExtFlash]` with reduced
 ### Setup
 
 ```bash
-git clone https://github.com/GoatsAndMonkeys/TinyBBS.git
+git clone --recurse-submodules https://github.com/MeshEnvy/TinyBBS.git
 cd TinyBBS
-
-# Clone Meshtastic firmware (if not already)
-git clone --recurse-submodules https://github.com/meshtastic/firmware.git
 
 python3 -m venv .venv
 source .venv/bin/activate
@@ -263,7 +260,8 @@ TinyBBS/
 │   ├── BBSChess.h/.cpp            # Chess engine + AI
 │   ├── FalloutWastelandRPG.h/.cpp # Wasteland RPG
 │   └── SCDailyQuest.h             # SideClique Daily Quest
-├── firmware/src/modules/
+├── firmware/                          # Meshtastic firmware (submodule)
+│   └── src/modules/
 │   ├── SideClique.h               # SideClique module header
 │   └── SideClique.cpp             # SideClique: beacons, DMs, sync, games, persistence
 ├── loader/                        # Standalone serial flash loader firmware
